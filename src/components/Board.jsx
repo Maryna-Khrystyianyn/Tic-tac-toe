@@ -40,9 +40,9 @@ const Board = ({xIsNext, squares, onPlay}) => {
 
 
   return (
-    <div>
+    <div className=" flex flex-col justify-center items-center gap">
       <Message winner={calculateWinner(squares)} next={xIsNext} />
-      <div>
+      <div className="mt-10">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
         <Square value={squares[2]} onSquareClick={() => handleClick(2)} />

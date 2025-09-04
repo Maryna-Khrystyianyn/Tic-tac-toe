@@ -12,12 +12,12 @@ const Game = () => {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
-    setXIsNext(!xIsNext);
+    
   }
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0);
+    
   }
 
   const moves = history.map((squares, move) => {
@@ -34,11 +34,12 @@ const Game = () => {
     );
   });
   return (
-    <div>
-      <div>
+    <div className="flex justify-center gap-20 m-20">
+      <div className="w-xl">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div>
+        <p className="w-sm text-2xl font-bold">Hictory</p>
         <ol>{moves}</ol>
       </div>
     </div>
