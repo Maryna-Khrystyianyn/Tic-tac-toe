@@ -2,7 +2,7 @@ import Message from "./Message";
 import Square from "./Square";
 
 
-const Board = ({xIsNext, squares, onPlay}) => {
+const Board = ({xIsNext, squares, onPlay, gameMode}) => {
   function calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
@@ -41,7 +41,11 @@ const Board = ({xIsNext, squares, onPlay}) => {
 
   return (
     <div className=" flex flex-col justify-center items-center gap">
-      <Message winner={calculateWinner(squares)} next={xIsNext} />
+     
+     <Message winner={calculateWinner(squares)} next={xIsNext} />
+     
+     
+     
       <div className="mt-10">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
